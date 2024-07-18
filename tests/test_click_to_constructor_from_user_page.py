@@ -18,6 +18,6 @@ class TestConstructor:
         driver.find_element(*TestLocators.CONSTRUCTOR).click()
 
         WebDriverWait(driver,3).until(expected_conditions.visibility_of_element_located(*TestLocators.TITLE_BUNS))
-        assert 'Соберите бургер' in TestLocators.BUNS_SECTION
 
-        driver.quit()
+        assert driver.find_element(*TestLocators.TITLE_BUNS).text == "Соберите бургер"
+

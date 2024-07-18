@@ -13,11 +13,11 @@ class TestLogo:
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(*TestLocators.DASHBOARD))
         driver.find_element(*TestLocators.DASHBOARD).click()
 
-        WebDriverWait(driver, 3).until(expected_conditions.element_to_be_clickable(*TestLocators.LOGO)
+        WebDriverWait(driver, 3).until(expected_conditions.element_to_be_clickable(*TestLocators.LOGO))
         driver.find_element(*TestLocators.LOGO).click()
 
         WebDriverWait(driver,3).until(expected_conditions.visibility_of_element_located(*TestLocators.BUNS_SECTION))
-        assert 'Соберите бургер' in TestLocators.BUNS_SECTION
+
+        assert driver.find_element(*TestLocators.BUNS_SECTION).text == "Булки"
 
 
-        driver.quit()

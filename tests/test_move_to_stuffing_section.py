@@ -15,6 +15,5 @@ class TestStuffingSection:
 
         driver.find_element(*TestLocators.STUFFING).click()
 
-        assert 'current' in TestLocators.SELECT_STUFFING
+        assert driver.find_element(*TestLocators.STUFFING_SECTION).text == "Начинки"
 
-        driver.quit()

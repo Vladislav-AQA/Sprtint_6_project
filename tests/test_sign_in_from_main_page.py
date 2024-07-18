@@ -14,7 +14,7 @@ class TestSignFromMain:
         driver.find_element(*TestLocators.SIGN_IN_AN_ACCOUNT_BUTTON).click()
 
         WebDriverWait(driver,3).until(expected_conditions.visibility_of_element_located(*TestLocators.SIGN_IN_BUTTON))
-        assert TestLocators.SIGN_IN_BUTTON in TestLocators.SIGN_IN_FORM
+
+        assert driver.find_element(*TestLocators.SIGN_IN_BUTTON).text == "Войти"
 
 
-        driver.quit()

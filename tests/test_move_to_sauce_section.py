@@ -13,7 +13,5 @@ class TestSauceSection:
         WebDriverWait(driver,3).until(expected_conditions.visibility_of_element_located(*TestLocators.SAUCES_SECTION))
         driver.find_element(*TestLocators.SAUCES).click()
 
+        assert driver.find_element(*TestLocators.SAUCES_SECTION).text == "Соусы"
 
-        assert 'current' in TestLocators.SELECT_SAUCE
-
-        driver.quit()

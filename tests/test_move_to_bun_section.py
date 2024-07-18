@@ -11,11 +11,8 @@ class TestBunSection:
         driver.get('https://stellarburgers.nomoreparties.site/')
 
         WebDriverWait(driver,3).until(expected_conditions.visibility_of_element_located(*TestLocators.BUNS_SECTION))
+        driver.find_element(*TestLocators.SAUCES).click()
         driver.find_element(*TestLocators.BUNS).click()
 
+        assert driver.find_element(*TestLocators.BUNS_SECTION).text == "Булки"
 
-        assert 'current' in TestLocators.BUNS_SECTION
-
-
-
-        driver.quit()
